@@ -1,5 +1,7 @@
 # SymbiFlow Architecture Definitions
 
+##This version needs wire\_nodes.json in prjxray-db
+
 ![License status](https://img.shields.io/github/license/SymbiFlow/symbiflow-arch-defs)
 [![Build Status](https://travis-ci.org/SymbiFlow/symbiflow-arch-defs.svg?branch=master)](https://travis-ci.org/SymbiFlow/symbiflow-arch-defs)
 [![Documentation Status](https://readthedocs.org/projects/symbiflow-arch-defs/badge/?version=latest)](https://symbiflow.readthedocs.io/projects/arch-defs/en/latest/?badge=latest)
