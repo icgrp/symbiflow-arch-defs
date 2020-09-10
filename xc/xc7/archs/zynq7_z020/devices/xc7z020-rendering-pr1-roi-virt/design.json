@@ -1,0 +1,414 @@
+{
+  "info": {
+    "name": "pr1",
+    "pins_per_tile": 5,
+    "GRID_X_MAX": 176,
+    "GRID_X_MIN": 89,
+    "GRID_Y_MAX": 51,
+    "GRID_Y_MIN": 1
+  },
+  "ports": [
+    {
+      "name": "clk_user",
+      "type": "clk",
+      "node": "CLK_HROW_TOP_R_X87Y130/CLK_HROW_CK_BUFHCLK_R0",
+      "pin": "pr1_SYN0"
+    },
+    {
+      "name": "clk_bft",
+      "type": "clk",
+      "node": "CLK_HROW_TOP_R_X87Y130/CLK_HROW_CK_BUFHCLK_R1",
+      "pin": "pr1_SYN1"
+    },
+    {
+      "name": "ap_rst",
+      "type": "in",
+      "node": "INT_R_X35Y97/NE6BEG0",
+      "pin": "pr1_SYN2"
+    },
+    {
+      "name": "Input_1_V_V[0]",
+      "type": "in",
+      "node": "INT_R_X33Y99/NE6BEG2",
+      "pin": "pr1_SYN3"
+    },
+    {
+      "name": "Input_1_V_V[1]",
+      "type": "in",
+      "node": "INT_R_X33Y99/NE6BEG1",
+      "pin": "pr1_SYN4"
+    },
+    {
+      "name": "Input_1_V_V[2]",
+      "type": "in",
+      "node": "INT_R_X33Y99/NE6BEG0",
+      "pin": "pr1_SYN5"
+    },
+    {
+      "name": "Input_1_V_V[3]",
+      "type": "in",
+      "node": "INT_L_X68Y98/NW6BEG0",
+      "pin": "pr1_SYN6"
+    },
+    {
+      "name": "Input_1_V_V[4]",
+      "type": "in",
+      "node": "INT_R_X67Y98/NE6BEG0",
+      "pin": "pr1_SYN7"
+    },
+    {
+      "name": "Input_1_V_V[5]",
+      "type": "in",
+      "node": "INT_L_X68Y97/NW6BEG3",
+      "pin": "pr1_SYN8"
+    },
+    {
+      "name": "Input_1_V_V[6]",
+      "type": "in",
+      "node": "INT_L_X68Y97/NW6BEG2",
+      "pin": "pr1_SYN9"
+    },
+    {
+      "name": "Input_1_V_V[7]",
+      "type": "in",
+      "node": "INT_L_X68Y97/NW6BEG1",
+      "pin": "pr1_SYN10"
+    },
+    {
+      "name": "Input_1_V_V[8]",
+      "type": "in",
+      "node": "INT_L_X68Y97/NW6BEG0",
+      "pin": "pr1_SYN11"
+    },
+    {
+      "name": "Input_1_V_V[9]",
+      "type": "in",
+      "node": "INT_R_X67Y97/NE6BEG3",
+      "pin": "pr1_SYN12"
+    },
+    {
+      "name": "Input_1_V_V[10]",
+      "type": "in",
+      "node": "INT_R_X67Y97/NE6BEG2",
+      "pin": "pr1_SYN13"
+    },
+    {
+      "name": "Input_1_V_V[11]",
+      "type": "in",
+      "node": "INT_R_X67Y97/NE6BEG1",
+      "pin": "pr1_SYN14"
+    },
+    {
+      "name": "Input_1_V_V[12]",
+      "type": "in",
+      "node": "INT_R_X67Y97/NE6BEG0",
+      "pin": "pr1_SYN15"
+    },
+    {
+      "name": "Input_1_V_V[13]",
+      "type": "in",
+      "node": "INT_L_X56Y98/NW6BEG0",
+      "pin": "pr1_SYN16"
+    },
+    {
+      "name": "Input_1_V_V[14]",
+      "type": "in",
+      "node": "INT_R_X55Y98/NE6BEG0",
+      "pin": "pr1_SYN17"
+    },
+    {
+      "name": "Input_1_V_V[15]",
+      "type": "in",
+      "node": "INT_L_X56Y97/NW6BEG3",
+      "pin": "pr1_SYN18"
+    },
+    {
+      "name": "Input_1_V_V[16]",
+      "type": "in",
+      "node": "INT_L_X56Y97/NW6BEG2",
+      "pin": "pr1_SYN19"
+    },
+    {
+      "name": "Input_1_V_V[17]",
+      "type": "in",
+      "node": "INT_L_X56Y97/NW6BEG1",
+      "pin": "pr1_SYN20"
+    },
+    {
+      "name": "Input_1_V_V[18]",
+      "type": "in",
+      "node": "INT_L_X56Y97/NW6BEG0",
+      "pin": "pr1_SYN21"
+    },
+    {
+      "name": "Input_1_V_V[19]",
+      "type": "in",
+      "node": "INT_R_X55Y97/NE6BEG3",
+      "pin": "pr1_SYN22"
+    },
+    {
+      "name": "Input_1_V_V[20]",
+      "type": "in",
+      "node": "INT_R_X55Y97/NE6BEG2",
+      "pin": "pr1_SYN23"
+    },
+    {
+      "name": "Input_1_V_V[21]",
+      "type": "in",
+      "node": "INT_R_X55Y97/NE6BEG1",
+      "pin": "pr1_SYN24"
+    },
+    {
+      "name": "Input_1_V_V[22]",
+      "type": "in",
+      "node": "INT_R_X55Y97/NE6BEG0",
+      "pin": "pr1_SYN25"
+    },
+    {
+      "name": "Input_1_V_V[23]",
+      "type": "in",
+      "node": "INT_L_X36Y98/NW6BEG0",
+      "pin": "pr1_SYN26"
+    },
+    {
+      "name": "Input_1_V_V[24]",
+      "type": "in",
+      "node": "INT_R_X35Y98/NE6BEG0",
+      "pin": "pr1_SYN27"
+    },
+    {
+      "name": "Input_1_V_V[25]",
+      "type": "in",
+      "node": "INT_L_X36Y97/NW6BEG3",
+      "pin": "pr1_SYN28"
+    },
+    {
+      "name": "Input_1_V_V[26]",
+      "type": "in",
+      "node": "INT_L_X36Y97/NW6BEG2",
+      "pin": "pr1_SYN29"
+    },
+    {
+      "name": "Input_1_V_V[27]",
+      "type": "in",
+      "node": "INT_L_X36Y97/NW6BEG1",
+      "pin": "pr1_SYN30"
+    },
+    {
+      "name": "Input_1_V_V[28]",
+      "type": "in",
+      "node": "INT_L_X36Y97/NW6BEG0",
+      "pin": "pr1_SYN31"
+    },
+    {
+      "name": "Input_1_V_V[29]",
+      "type": "in",
+      "node": "INT_R_X35Y97/NE6BEG3",
+      "pin": "pr1_SYN32"
+    },
+    {
+      "name": "Input_1_V_V[30]",
+      "type": "in",
+      "node": "INT_R_X35Y97/NE6BEG2",
+      "pin": "pr1_SYN33"
+    },
+    {
+      "name": "Input_1_V_V[31]",
+      "type": "in",
+      "node": "INT_R_X35Y97/NE6BEG1",
+      "pin": "pr1_SYN34"
+    },
+    {
+      "name": "Output_1_V_V[0]",
+      "type": "out",
+      "node": "INT_L_X36Y107/WW4BEG1",
+      "pin": "pr1_SYN35"
+    },
+    {
+      "name": "Output_1_V_V[1]",
+      "type": "out",
+      "node": "INT_L_X36Y107/WW4BEG0",
+      "pin": "pr1_SYN36"
+    },
+    {
+      "name": "Output_1_V_V[2]",
+      "type": "out",
+      "node": "INT_R_X37Y106/WW4BEG0",
+      "pin": "pr1_SYN37"
+    },
+    {
+      "name": "Output_1_V_V[3]",
+      "type": "out",
+      "node": "INT_L_X36Y106/WW4BEG3",
+      "pin": "pr1_SYN38"
+    },
+    {
+      "name": "Output_1_V_V[4]",
+      "type": "out",
+      "node": "INT_L_X36Y106/WW4BEG2",
+      "pin": "pr1_SYN39"
+    },
+    {
+      "name": "Output_1_V_V[5]",
+      "type": "out",
+      "node": "INT_L_X36Y106/WW4BEG1",
+      "pin": "pr1_SYN40"
+    },
+    {
+      "name": "Output_1_V_V[6]",
+      "type": "out",
+      "node": "INT_L_X36Y106/WW4BEG0",
+      "pin": "pr1_SYN41"
+    },
+    {
+      "name": "Output_1_V_V[7]",
+      "type": "out",
+      "node": "INT_R_X37Y105/WW4BEG0",
+      "pin": "pr1_SYN42"
+    },
+    {
+      "name": "Output_1_V_V[8]",
+      "type": "out",
+      "node": "INT_L_X36Y105/WW4BEG3",
+      "pin": "pr1_SYN43"
+    },
+    {
+      "name": "Output_1_V_V[9]",
+      "type": "out",
+      "node": "INT_L_X36Y105/WW4BEG2",
+      "pin": "pr1_SYN44"
+    },
+    {
+      "name": "Output_1_V_V[10]",
+      "type": "out",
+      "node": "INT_L_X36Y105/WW4BEG1",
+      "pin": "pr1_SYN45"
+    },
+    {
+      "name": "Output_1_V_V[11]",
+      "type": "out",
+      "node": "INT_L_X36Y105/WW4BEG0",
+      "pin": "pr1_SYN46"
+    },
+    {
+      "name": "Output_1_V_V[12]",
+      "type": "out",
+      "node": "INT_R_X37Y104/WW4BEG0",
+      "pin": "pr1_SYN47"
+    },
+    {
+      "name": "Output_1_V_V[13]",
+      "type": "out",
+      "node": "INT_L_X36Y104/WW4BEG3",
+      "pin": "pr1_SYN48"
+    },
+    {
+      "name": "Output_1_V_V[14]",
+      "type": "out",
+      "node": "INT_L_X36Y104/WW4BEG2",
+      "pin": "pr1_SYN49"
+    },
+    {
+      "name": "Output_1_V_V[15]",
+      "type": "out",
+      "node": "INT_L_X36Y104/WW4BEG1",
+      "pin": "pr1_SYN50"
+    },
+    {
+      "name": "Output_1_V_V[16]",
+      "type": "out",
+      "node": "INT_L_X36Y104/WW4BEG0",
+      "pin": "pr1_SYN51"
+    },
+    {
+      "name": "Output_1_V_V[17]",
+      "type": "out",
+      "node": "INT_R_X37Y103/WW4BEG0",
+      "pin": "pr1_SYN52"
+    },
+    {
+      "name": "Output_1_V_V[18]",
+      "type": "out",
+      "node": "INT_L_X36Y103/WW4BEG3",
+      "pin": "pr1_SYN53"
+    },
+    {
+      "name": "Output_1_V_V[19]",
+      "type": "out",
+      "node": "INT_L_X36Y103/WW4BEG2",
+      "pin": "pr1_SYN54"
+    },
+    {
+      "name": "Output_1_V_V[20]",
+      "type": "out",
+      "node": "INT_L_X36Y103/WW4BEG1",
+      "pin": "pr1_SYN55"
+    },
+    {
+      "name": "Output_1_V_V[21]",
+      "type": "out",
+      "node": "INT_L_X36Y103/WW4BEG0",
+      "pin": "pr1_SYN56"
+    },
+    {
+      "name": "Output_1_V_V[22]",
+      "type": "out",
+      "node": "INT_R_X37Y102/WW4BEG0",
+      "pin": "pr1_SYN57"
+    },
+    {
+      "name": "Output_1_V_V[23]",
+      "type": "out",
+      "node": "INT_L_X36Y102/WW4BEG3",
+      "pin": "pr1_SYN58"
+    },
+    {
+      "name": "Output_1_V_V[24]",
+      "type": "out",
+      "node": "INT_L_X36Y102/WW4BEG2",
+      "pin": "pr1_SYN59"
+    },
+    {
+      "name": "Output_1_V_V[25]",
+      "type": "out",
+      "node": "INT_L_X36Y102/WW4BEG1",
+      "pin": "pr1_SYN60"
+    },
+    {
+      "name": "Output_1_V_V[26]",
+      "type": "out",
+      "node": "INT_L_X36Y102/WW4BEG0",
+      "pin": "pr1_SYN61"
+    },
+    {
+      "name": "Output_1_V_V[27]",
+      "type": "out",
+      "node": "INT_R_X37Y101/WW4BEG0",
+      "pin": "pr1_SYN62"
+    },
+    {
+      "name": "Output_1_V_V[28]",
+      "type": "out",
+      "node": "INT_L_X36Y101/WW4BEG3",
+      "pin": "pr1_SYN63"
+    },
+    {
+      "name": "Output_1_V_V[29]",
+      "type": "out",
+      "node": "INT_L_X36Y101/WW4BEG2",
+      "pin": "pr1_SYN64"
+    },
+    {
+      "name": "Output_1_V_V[30]",
+      "type": "out",
+      "node": "INT_L_X36Y101/WW4BEG1",
+      "pin": "pr1_SYN65"
+    },
+    {
+      "name": "Output_1_V_V[31]",
+      "type": "out",
+      "node": "INT_L_X36Y101/WW4BEG0",
+      "pin": "pr1_SYN66"
+    }
+  ]
+}

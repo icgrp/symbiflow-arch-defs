@@ -1,0 +1,47 @@
+{
+    "info":
+        {
+        "name": "pr1",
+        "pins_per_tile": 5,
+        "GRID_X_MAX": 176,
+        "GRID_X_MIN": 89,
+        "GRID_Y_MAX": 51,
+        "GRID_Y_MIN": 1
+        },
+    "ports": [
+        {
+            "name": "clk_user",
+            "type": "clk",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "clk_bft",
+            "type": "clk",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "ap_rst",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "south"
+        },
+        { 
+            "name": "Input_1_V_V",
+            "type": "in",
+            "data_type": "bus",
+            "msb": 31,
+            "lsb": 0,
+            "side": "south"
+        },
+        {    
+            "name": "Output_1_V_V",
+            "type": "out",
+            "data_type": "bus",
+            "msb": 31,
+            "lsb": 0,
+            "side": "west"
+        }
+    ]
+}

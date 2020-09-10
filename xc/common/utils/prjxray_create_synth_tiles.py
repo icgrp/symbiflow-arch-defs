@@ -85,6 +85,24 @@ SELECT grid_x, grid_y FROM tile WHERE pkey = (SELECT tile_pkey FROM wire WHERE p
     return abs(x1 - x2) + abs(y1 - y2)
 
 
+def get_driver_side(conn, roi, driver_tile):
+    x1 = roi.x1
+    x2 = roi.x2
+    y1 = roi.y1
+    y2 = roi.y2
+    driver_x, driver_y = map_tile_to_vpr_coord(conn, driver_tile)
+    if driver_x < x1:
+        return 'left'
+    elif driver_x > x2:
+        return 'right'
+    elif driver_y < y1:
+        return 'top'
+    elif driver_y > y2:
+        return 'bottom'
+    else:
+        return 'inside'
+
+
 def find_wire_from_node(conn, g, roi, node_name, overlay=False):
     """
     Finds a pair on wires in the given node such that:
@@ -121,15 +139,55 @@ SELECT pkey FROM wire WHERE node_pkey = ?
     ins = {i for i, v in in_outs.items() if v}
     outs = {i for i, v in in_outs.items() if not v}
     min_manhattan_dist = 1000000
-    correct_wire = None
+    wire_min_dist_map = {}
     for i in ins:
         for j in outs:
             d = wire_manhattan_distance(conn, i, j)
+            if (j not in wire_min_dist_map) or d < wire_min_dist_map[j]:
+                wire_min_dist_map[j] = d
+
             if d < min_manhattan_dist:
                 min_manhattan_dist = d
-                correct_wire = j
 
-    assert correct_wire is not None, node_name
+    usable_wires = {k:v for k,v in wire_min_dist_map.items() if v == min_manhattan_dist}
+        
+    assert len(usable_wires) > 0, node_name
+    side = get_driver_side(conn, roi, tile)
+    if len(usable_wires) > 1 and side != 'inside':
+        x1 = roi.x1
+        x2 = roi.x2
+        y1 = roi.y1
+        y2 = roi.y2
+        for wire_pkey in usable_wires:
+            cur.execute("""
+            SELECT grid_x, grid_y FROM tile WHERE pkey = (SELECT tile_pkey FROM wire WHERE pkey = ?)
+            """, (wire_pkey, )
+            )
+            x, y = cur.fetchone()
+            if not overlay:
+                if x <= x1:
+                    usable_wires[wire_pkey] = 'left'
+                elif x >= x2:
+                    usable_wires[wire_pkey] = 'right'
+                elif y <= y1:
+                    usable_wires[wire_pkey] = 'top'
+                elif y >= y2:
+                    usable_wires[wire_pkey] = 'bottom'
+            else:
+                if x >= x1 and x <= x1 + 1:
+                    usable_wires[wire_pkey] = 'left'
+                elif x <= x2 and x >= x2 - 1:
+                    usable_wires[wire_pkey] = 'right'
+                elif y >= y1 and y <= y1 + 1:
+                    usable_wires[wire_pkey] = 'top'
+                elif y <= y2 and y >= y2 - 1:
+                    usable_wires[wire_pkey] = 'bottom'
+
+        usable_wires = {k:v for k,v in usable_wires.items() if v == side}
+        correct_wire = list(usable_wires.keys())[0]
+    else:
+        correct_wire = list(usable_wires.keys())[0]
+
     cur.execute(
         """
 SELECT node_pkey, phy_tile_pkey, wire_in_tile_pkey FROM wire WHERE pkey = ?
