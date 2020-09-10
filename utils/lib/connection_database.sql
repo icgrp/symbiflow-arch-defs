@@ -278,6 +278,7 @@ CREATE TABLE track(
 -- connected to a site pin.
 CREATE TABLE node(
   pkey INTEGER PRIMARY KEY,
+  name TEXT,
   number_pips INT,
   track_pkey INT,
   site_wire_pkey INT,
