@@ -1369,18 +1369,25 @@ def create_track(node, unique_pos):
 
 def name_nodes(conn, wires_nodes):
     cur = conn.cursor()
-	
-    wires_nodes_filtered = dict(filter(lambda i: i[1] != '', wires_nodes.items()))
+
+    wires_nodes_filtered = dict(
+        filter(lambda i: i[1] != '', wires_nodes.items())
+    )
 
     for wire, node in wires_nodes_filtered.items():
         tile_name, wire_name = wire.split('/')
         if tile_name.startswith("PSS"):
             continue
         wire_pkey = get_wire_pkey(conn, tile_name, wire_name)
-        cur.execute('SELECT name,pkey FROM node WHERE pkey = (SELECT node_pkey FROM wire WHERE pkey = ?)', (wire_pkey,))
+        cur.execute(
+            'SELECT name,pkey FROM node WHERE pkey = (SELECT node_pkey FROM wire WHERE pkey = ?)',
+            (wire_pkey, )
+        )
         node_name, node_pkey = cur.fetchone()
         if node_name == None:
-            cur.execute('UPDATE node SET name=? WHERE pkey = ?', (node, node_pkey))
+            cur.execute(
+                'UPDATE node SET name=? WHERE pkey = ?', (node, node_pkey)
+            )
 
     conn.commit()
 
@@ -2309,7 +2316,8 @@ def main():
         print("{}: About to load database".format(datetime.datetime.now()))
         db = prjxray.db.Database(args.db_root, args.part)
 
-        with open(os.path.join(args.db_root, args.part, 'wires_nodes.json')) as f:
+        with open(os.path.join(args.db_root, args.part,
+                               'wires_nodes.json')) as f:
             wires_nodes = json.load(f)
 
         grid = db.grid()
