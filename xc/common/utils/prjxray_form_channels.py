@@ -44,7 +44,8 @@ from lib.rr_graph import graph2
 import datetime
 import os
 import os.path
-from lib.connection_database import NodeClassification, create_tables
+from lib.connection_database import NodeClassification, create_tables, get_wire_pkey
+import simplejson as json
 
 from prjxray_db_cache import DatabaseCache
 from prjxray_define_segments import SegmentWireMap
@@ -1344,6 +1345,24 @@ def create_track(node, unique_pos):
     return [node, tracks_list, track_connections, tracks_model]
 
 
+def name_nodes(conn, wires_nodes):
+    cur = conn.cursor()
+	
+    wires_nodes_filtered = dict(filter(lambda i: i[1] != '', wires_nodes.items()))
+
+    for wire, node in wires_nodes_filtered.items():
+        tile_name, wire_name = wire.split('/')
+        if tile_name.startswith("PSS"):
+            continue
+        wire_pkey = get_wire_pkey(conn, tile_name, wire_name)
+        cur.execute('SELECT name,pkey FROM node WHERE pkey = (SELECT node_pkey FROM wire WHERE pkey = ?)', (wire_pkey,))
+        node_name, node_pkey = cur.fetchone()
+        if node_name == None:
+            cur.execute('UPDATE node SET name=? WHERE pkey = ?', (node, node_pkey))
+
+    conn.commit()
+
+
 def form_tracks(conn, segments):
     cur = conn.cursor()
     cur2 = conn.cursor()
@@ -2267,6 +2286,10 @@ def main():
 
         print("{}: About to load database".format(datetime.datetime.now()))
         db = prjxray.db.Database(args.db_root, args.part)
+
+        with open(os.path.join(args.db_root, args.part, 'wires_nodes.json')) as f:
+            wires_nodes = json.load(f)
+
         grid = db.grid()
         get_switch, get_switch_timing = create_get_switch(conn)
         import_phy_grid(db, grid, conn, get_switch, get_switch_timing)
@@ -2276,6 +2299,8 @@ def main():
         print("{}: Initial database formed".format(datetime.datetime.now()))
         import_nodes(db, grid, conn)
         print("{}: Connections made".format(datetime.datetime.now()))
+        name_nodes(conn, wires_nodes)
+        print("{}: Nodes named".format(datetime.datetime.now()))
         count_sites_and_pips_on_nodes(conn)
         print("{}: Counted sites and pips".format(datetime.datetime.now()))
         classify_nodes(conn, get_switch_timing)

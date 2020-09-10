@@ -163,4 +163,6 @@ add_fpga_target(
 add_vivado_target(
   NAME counter_pynqz1_vivado
   PARENT_NAME counter_pynqz1
+  CLOCK_PINS clk
+  CLOCK_PERIODS 10.0
 )
