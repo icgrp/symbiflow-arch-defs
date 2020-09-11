@@ -53,13 +53,13 @@
             "data_type": "bus",
             "msb": 48,
             "lsb": 0,
-            "side": "north"
+            "side": "west"
         },
         {
             "name": "ap_start",
             "type": "in",
             "data_type": "scalar",
-            "side": "north"
+            "side": "west"
         }
     ]
 }
