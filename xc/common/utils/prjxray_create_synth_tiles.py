@@ -153,7 +153,7 @@ SELECT pkey FROM wire WHERE node_pkey = ?
         
     assert len(usable_wires) > 0, node_name
     side = get_driver_side(conn, roi, tile)
-    if len(usable_wires) > 1 and side != 'inside':
+    if len(usable_wires) > 1 and 'CLK' in node:
         x1 = roi.x1
         x2 = roi.x2
         y1 = roi.y1
@@ -186,6 +186,7 @@ SELECT pkey FROM wire WHERE node_pkey = ?
         usable_wires = {k:v for k,v in usable_wires.items() if v == side}
         correct_wire = list(usable_wires.keys())[0]
     else:
+        assert len(usable_wires) == 1
         correct_wire = list(usable_wires.keys())[0]
 
     cur.execute(
