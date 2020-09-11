@@ -33,7 +33,7 @@ def split_node_list(conn, roi, nodes):
     return (inputs, outputs)
 
 
-def get_nodes(conn):
+def get_nodes(conn, g, roi):
     if get_nodes.nodes == None:
         c = conn.cursor()
         c.execute("""
@@ -45,6 +45,14 @@ ON graph_node.node_pkey = node.pkey
 ORDER BY graph_node.node_pkey
         """)
         get_nodes.nodes = c.fetchall()
+        def node_filter(n, conn, g, roi):
+            try:
+                find_wire_from_node(conn, g, roi, n[6])
+                return True
+            except:
+                return False
+
+        get_nodes.nodes = list(filter(partial(node_filter, conn=conn, g=g, roi=roi), get_nodes.nodes))
 
     return get_nodes.nodes
 get_nodes.nodes = None
@@ -80,7 +88,7 @@ def choose_partition_pins(conn, g, roi, num_inputs, num_outputs, num_clks, side,
 
     x1, y1 = convert_from_canon_to_vpr_coord(conn, roi.x1, roi.y1)
     x2, y2 = convert_from_canon_to_vpr_coord(conn, roi.x2, roi.y2)
-    possible_nodes = list(filter(partial(func, roi=(x1,y1,x2,y2)), get_nodes(conn)))
+    possible_nodes = list(filter(partial(func, roi=(x1,y1,x2,y2)), get_nodes(conn, g, roi)))
 
     def filter_bad_nodes(n):
         tile, _ = n[6].split('/')
@@ -91,7 +99,7 @@ def choose_partition_pins(conn, g, roi, num_inputs, num_outputs, num_clks, side,
     clock_func = lambda n, roi: ((n[2] < roi.x1 and n[3] > roi.x1) or \
             (n[2] > roi.x1 and n[3] < roi.x1)) \
             and n[4] >= roi.y1 and n[5] <= roi.y2 and n[6] != None and ('BUFHCLK' in n[6])
-    possible_clock_nodes = list(filter(partial(clock_func, roi=roi), get_nodes(conn)))
+    possible_clock_nodes = list(filter(partial(clock_func, roi=roi), get_nodes(conn, g, roi)))
 
     ports = list()
     if num_clks > 0:
@@ -139,6 +147,9 @@ def choose_partition_pins(conn, g, roi, num_inputs, num_outputs, num_clks, side,
             outputs_remaining -= 1
             choose_partition_pins.nodes_used[node] = True
     
+    if len(ports) != num_inputs+num_outputs+num_clks:
+        from IPython import embed; embed()
+
     return ports
 choose_partition_pins.tiles_used = {}
 choose_partition_pins.nodes_used = {}
@@ -218,6 +229,7 @@ def main():
         '--connection_database', help='Connection database', required=True
     )
     parser.add_argument('--design', required=True)
+    parser.add_argument('--pcf', required=False)
 
     args = parser.parse_args()
 
@@ -225,9 +237,13 @@ def main():
     g = db.grid()
 
     if args.roi_def:
-
         with DatabaseCache(args.connection_database, read_only=True) as conn:
             design = create_design(conn, db, g, args.roi_def)
+
+        if args.pcf:
+            with open(args.pcf, "w") as f:
+                for port in design['ports']:
+                    f.write('set_io ' + port['name'] + ' ' + port['pin'] + '\n')
     elif args.overlay:
         with open(args.overlay) as f:
             j = json.load(f)
