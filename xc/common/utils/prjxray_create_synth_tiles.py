@@ -27,7 +27,6 @@ WHERE tile_map.phy_tile_pkey = ? AND tile_type.name != 'NULL'
     """, (phy_tile_pkey, )
     )
     mapped_tiles = c.fetchall()
-    assert len(mapped_tiles) == 1, tile
     tile_pkey = mapped_tiles[0][0]
 
     c.execute("SELECT grid_x, grid_y FROM tile WHERE pkey = ?", (tile_pkey, ))

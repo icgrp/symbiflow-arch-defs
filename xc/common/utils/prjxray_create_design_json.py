@@ -66,7 +66,9 @@ WHERE grid_x = ? AND grid_y = ?
     """, (grid_x, grid_y))
 
     tiles = c.fetchall()
-    assert len(tiles) == 1
+    if len(tiles[0]) != 1:
+        from IPython import embed; embed()
+    assert len(tiles[0]) == 1
     x, y = map_tile_to_vpr_coord(conn, tiles[0][0])
     return (x,y)
 
