@@ -35,6 +35,7 @@ from prjxray_constant_site_pins import feature_when_routed
 from prjxray_tile_import import remove_vpr_tile_prefix
 import simplejson as json
 from lib import progressbar_utils
+from prjxray_db_cache import DatabaseCache
 import datetime
 import re
 import functools
@@ -1331,8 +1332,7 @@ def main():
         synth_tiles_const = find_constant_network(graph)
         synth_tiles['tiles'].update(synth_tiles_const['tiles'])
 
-    with sqlite3.connect("file:{}?mode=ro".format(args.connection_database),
-                         uri=True) as conn:
+    with DatabaseCache(args.connection_database, read_only=True) as conn:
 
         extra_features = ExtraFeatures()
         populate_freq_bb_features(conn, extra_features)
