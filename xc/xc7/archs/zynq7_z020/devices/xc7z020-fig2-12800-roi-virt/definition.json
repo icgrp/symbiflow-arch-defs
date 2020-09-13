@@ -25,19 +25,19 @@
             "name": "resend",
             "type": "in",
             "data_type": "scalar",
-            "side": "west"
+            "side": "north"
         },
         {
             "name": "reset",
             "type": "in",
             "data_type": "scalar",
-            "side": "west"
+            "side": "north"
         },
         {
             "name": "reset_bft",
             "type": "in",
             "data_type": "scalar",
-            "side": "west"
+            "side": "north"
         },
         {
             "name": "dout_leaf_interface2bft",
@@ -45,7 +45,7 @@
             "data_type": "bus",
             "msb": 48,
             "lsb": 0,
-            "side": "west"
+            "side": "north"
         },
         {
             "name": "din_leaf_bft2interface",
@@ -53,13 +53,13 @@
             "data_type": "bus",
             "msb": 48,
             "lsb": 0,
-            "side": "west"
+            "side": "north"
         },
         {
             "name": "ap_start",
             "type": "in",
             "data_type": "scalar",
-            "side": "west"
+            "side": "north"
         }
     ]
 }
