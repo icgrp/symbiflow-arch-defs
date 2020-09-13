@@ -3,8 +3,8 @@
         {
         "name": "pr1",
         "pins_per_tile": 10,
-        "GRID_X_MAX": 117,
-        "GRID_X_MIN": 72,
+        "GRID_X_MAX": 127,
+        "GRID_X_MIN": 84,
         "GRID_Y_MAX": 103,
         "GRID_Y_MIN": 53
         },

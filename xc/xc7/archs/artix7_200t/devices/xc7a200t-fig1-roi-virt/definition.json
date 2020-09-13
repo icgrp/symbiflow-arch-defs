@@ -3,10 +3,10 @@
         {
         "name": "pr1",
         "pins_per_tile": 10,
-        "GRID_X_MAX": 220,
-        "GRID_X_MIN": 194,
+        "GRID_X_MAX": 254,
+        "GRID_X_MIN": 207,
         "GRID_Y_MAX": 103,
-        "GRID_Y_MIN": 32
+        "GRID_Y_MIN": 53
         },
     "ports": [
         {
