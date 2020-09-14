@@ -1,0 +1,176 @@
+{
+    "info":
+        {
+        "name": "pr2",
+        "pins_per_tile": 10,
+        "GRID_X_MAX": 110,
+        "GRID_X_MIN": 93,
+        "GRID_Y_MAX": 51,
+        "GRID_Y_MIN": 1
+        },
+    "ports": [
+        {
+            "name": "ap_CS_fsm_pp1_stage0",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "ap_CS_fsm_reg[0]_0",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "ap_CS_fsm_reg[70]_0",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "ap_CS_fsm_state75",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "ap_enable_reg_pp1_iter0",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "clk_user",
+            "type": "clk",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "CO[0]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "D",
+            "type": "in",
+            "data_type": "bus",
+            "msb": 7,
+            "lsb": 0,
+            "side": "west"
+            
+        },
+        {
+            "name": "dout",
+            "type": "in",
+            "data_type": "bus",
+            "msb": 31,
+            "lsb": 0,
+            "side": "west"
+            
+        },
+        {
+            "name": "E[0]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "empty",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "exitcond1_reg_3739",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "exitcond1_reg_3739_reg[0]_0",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "full",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "gen_pf_ic_rc.ram_empty_i_reg",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "Output_1_V_V_1_data_reg_reg[16]_0",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "Output_1_V_V_1_data_reg_reg[31]_0",
+            "type": "out",
+            "data_type": "bus",
+            "msb": 31,
+            "lsb": 0,
+            "side": "west"
+            
+        },
+        {
+            "name": "pixels_color_V_reg_3748_reg[7]_0",
+            "type": "in",
+            "data_type": "bus",
+            "msb": 23,
+            "lsb": 0,
+            "side": "west"
+            
+        },
+        {
+            "name": "Q[0]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "reset",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "ram_reg_0_0",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "vld_user2interface_1",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "wr_en",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+        }
+    ]
+}
