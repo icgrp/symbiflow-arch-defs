@@ -207,6 +207,62 @@ add_xc_board(
   PROG_CMD "${OPENOCD} -f ${PRJXRAY_DIR}/utils/openocd/board-digilent-pynqz1.cfg -c \\\"init $<SEMICOLON> pld load 0 \${OUT_BIN} $<SEMICOLON> exit\\\""
 )
 
+add_xc_board(
+  BOARD pynqz1-rendering-pr2
+  DEVICE xc7z020-rendering-pr2
+  PACKAGE test
+  PART xc7z020clg400-1
+  PROG_CMD "${OPENOCD} -f ${PRJXRAY_DIR}/utils/openocd/board-digilent-pynqz1.cfg -c \\\"init $<SEMICOLON> pld load 0 \${OUT_BIN} $<SEMICOLON> exit\\\""
+)
+
+add_xc_board(
+  BOARD pynqz1-rendering-pr3
+  DEVICE xc7z020-rendering-pr3
+  PACKAGE test
+  PART xc7z020clg400-1
+  PROG_CMD "${OPENOCD} -f ${PRJXRAY_DIR}/utils/openocd/board-digilent-pynqz1.cfg -c \\\"init $<SEMICOLON> pld load 0 \${OUT_BIN} $<SEMICOLON> exit\\\""
+)
+
+add_xc_board(
+  BOARD pynqz1-rendering-pr4
+  DEVICE xc7z020-rendering-pr4
+  PACKAGE test
+  PART xc7z020clg400-1
+  PROG_CMD "${OPENOCD} -f ${PRJXRAY_DIR}/utils/openocd/board-digilent-pynqz1.cfg -c \\\"init $<SEMICOLON> pld load 0 \${OUT_BIN} $<SEMICOLON> exit\\\""
+)
+
+add_xc_board(
+  BOARD pynqz1-rendering-pr5
+  DEVICE xc7z020-rendering-pr5
+  PACKAGE test
+  PART xc7z020clg400-1
+  PROG_CMD "${OPENOCD} -f ${PRJXRAY_DIR}/utils/openocd/board-digilent-pynqz1.cfg -c \\\"init $<SEMICOLON> pld load 0 \${OUT_BIN} $<SEMICOLON> exit\\\""
+)
+
+add_xc_board(
+  BOARD pynqz1-rendering-pr6
+  DEVICE xc7z020-rendering-pr6
+  PACKAGE test
+  PART xc7z020clg400-1
+  PROG_CMD "${OPENOCD} -f ${PRJXRAY_DIR}/utils/openocd/board-digilent-pynqz1.cfg -c \\\"init $<SEMICOLON> pld load 0 \${OUT_BIN} $<SEMICOLON> exit\\\""
+)
+
+add_xc_board(
+  BOARD pynqz1-rendering-pr7
+  DEVICE xc7z020-rendering-pr7
+  PACKAGE test
+  PART xc7z020clg400-1
+  PROG_CMD "${OPENOCD} -f ${PRJXRAY_DIR}/utils/openocd/board-digilent-pynqz1.cfg -c \\\"init $<SEMICOLON> pld load 0 \${OUT_BIN} $<SEMICOLON> exit\\\""
+)
+
+add_xc_board(
+  BOARD pynqz1-rendering-pr8
+  DEVICE xc7z020-rendering-pr8
+  PACKAGE test
+  PART xc7z020clg400-1
+  PROG_CMD "${OPENOCD} -f ${PRJXRAY_DIR}/utils/openocd/board-digilent-pynqz1.cfg -c \\\"init $<SEMICOLON> pld load 0 \${OUT_BIN} $<SEMICOLON> exit\\\""
+)
+
 #add_xc_board(
 #  BOARD marszx3-full
 #  DEVICE xc7z020

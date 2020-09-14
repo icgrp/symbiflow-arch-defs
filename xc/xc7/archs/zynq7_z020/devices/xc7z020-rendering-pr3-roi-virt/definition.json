@@ -1,0 +1,61 @@
+{
+    "info":
+        {
+        "name": "pr3",
+        "pins_per_tile": 10,
+        "GRID_X_MAX": 28,
+        "GRID_X_MIN": 0,
+        "GRID_Y_MAX": 155,
+        "GRID_Y_MIN": 105
+        },
+    "ports": [
+        {
+            "name": "clk_bft",
+            "type": "clk",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "clk_user",
+            "type": "clk",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "din_leaf_bft2interface",
+            "type": "in",
+            "data_type": "bus",
+            "msb": 43,
+            "lsb": 0,
+            "side": "west"
+            
+        },
+        {
+            "name": "dout_leaf_interface2bft",
+            "type": "out",
+            "data_type": "bus",
+            "msb": 48,
+            "lsb": 0,
+            "side": "west"
+            
+        },
+        {
+            "name": "reset",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "reset_bft",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "resend",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        }
+    ]
+}

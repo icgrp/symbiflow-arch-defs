@@ -1,0 +1,195 @@
+{
+    "info":
+        {
+        "name": "pr8",
+        "pins_per_tile": 10,
+        "GRID_X_MAX": 110,
+        "GRID_X_MIN": 93,
+        "GRID_Y_MAX": 103,
+        "GRID_Y_MIN": 53
+        },
+    "ports": [
+        {
+            "name": "ap_CS_fsm_pp1_stage0",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "ap_CS_fsm_state75",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "ap_enable_reg_pp1_iter0",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "clk_bft",
+            "type": "clk",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "clk_user",
+            "type": "clk",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "CO[0]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "D",
+            "type": "out",
+            "data_type": "bus",
+            "msb": 7,
+            "lsb": 0,
+            "side": "west"
+            
+        },
+        {
+            "name": "din_leaf_bft2interface",
+            "type": "in",
+            "data_type": "bus",
+            "msb": 43,
+            "lsb": 0,
+            "side": "west"
+            
+        },
+        {
+            "name": "dout",
+            "type": "out",
+            "data_type": "bus",
+            "msb": 23,
+            "lsb": 0,
+            "side": "west"
+            
+        },
+        {
+            "name": "dout_leaf_interface2bft",
+            "type": "out",
+            "data_type": "bus",
+            "msb": 48,
+            "lsb": 0,
+            "side": "west"
+            
+        },
+        {
+            "name": "E[0]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "empty",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "full",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "gen_pf_ic_rc.ngen_full_rst_val.ram_full_i_reg",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+            
+        },
+        {
+            "name": "gen_wr_a.gen_word_narrow.mem_reg",
+            "type": "out",
+            "data_type": "bus",
+            "msb": 31,
+            "lsb": 0,
+            "side": "west"
+            
+        },
+        {
+            "name": "gen_wr_a.gen_word_narrow.mem_reg_0",
+            "type": "in",
+            "data_type": "bus",
+            "msb": 31,
+            "lsb": 0,
+            "side": "west"
+            
+        },
+        {
+            "name": "Q",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "reset",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "reset_bft",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "resend",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "t_V_1_reg_3587_reg[15]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "vld_interface2user_reg",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "vld_interface2user_reg_0",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "vld_interface2user_reg_1[0]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "vld_user2interface_1",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        },
+        {
+            "name": "wr_en",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west"
+        }
+    ]
+}

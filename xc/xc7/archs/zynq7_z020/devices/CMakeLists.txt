@@ -14,6 +14,55 @@ add_xc_device_define(
 add_xc_device_define(
   ARCH zynq7_z020
   PART xc7z020clg484-1
+  USE_ROI 
+  DEVICES xc7z020-rendering-pr2
+)
+
+add_xc_device_define(
+  ARCH zynq7_z020
+  PART xc7z020clg484-1
+  USE_ROI 
+  DEVICES xc7z020-rendering-pr3
+)
+
+add_xc_device_define(
+  ARCH zynq7_z020
+  PART xc7z020clg484-1
+  USE_ROI 
+  DEVICES xc7z020-rendering-pr4
+)
+
+add_xc_device_define(
+  ARCH zynq7_z020
+  PART xc7z020clg484-1
+  USE_ROI 
+  DEVICES xc7z020-rendering-pr5
+)
+
+add_xc_device_define(
+  ARCH zynq7_z020
+  PART xc7z020clg484-1
+  USE_ROI 
+  DEVICES xc7z020-rendering-pr6
+)
+
+add_xc_device_define(
+  ARCH zynq7_z020
+  PART xc7z020clg484-1
+  USE_ROI 
+  DEVICES xc7z020-rendering-pr7
+)
+
+add_xc_device_define(
+  ARCH zynq7_z020
+  PART xc7z020clg484-1
+  USE_ROI 
+  DEVICES xc7z020-rendering-pr8
+)
+
+add_xc_device_define(
+  ARCH zynq7_z020
+  PART xc7z020clg484-1
   USE_ROI
   DEVICES xc7z020-fig1
 )
