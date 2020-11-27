@@ -1344,27 +1344,24 @@ def create_track(node, unique_pos):
     return [node, tracks_list, track_connections, tracks_model]
 
 
-def name_nodes(conn, wires_nodes):
+def name_nodes(conn, node_model):
     cur = conn.cursor()
 
-    wires_nodes_filtered = dict(
-        filter(lambda i: i[1] != '', wires_nodes.items())
-    )
-
-    for wire, node in wires_nodes_filtered.items():
-        tile_name, wire_name = wire.split('/')
-        if tile_name.startswith("PSS"):
-            continue
-        wire_pkey = get_wire_pkey(conn, tile_name, wire_name)
-        cur.execute(
-            'SELECT name,pkey FROM node WHERE pkey = (SELECT node_pkey FROM wire WHERE pkey = ?)',
-            (wire_pkey, )
-        )
-        node_name, node_pkey = cur.fetchone()
-        if node_name == None:
+    for node in node_model.get_nodes():
+        for wire in node_model.get_wires_for_node(*node):
+            tile_name, wire_name = wire
+            if tile_name.startswith("PSS"):
+                continue
+            wire_pkey = get_wire_pkey(conn, tile_name, wire_name)
             cur.execute(
-                'UPDATE node SET name=? WHERE pkey = ?', (node, node_pkey)
+                'SELECT name,pkey FROM node WHERE pkey = (SELECT node_pkey FROM wire WHERE pkey = ?)',
+                (wire_pkey, )
             )
+            node_name, node_pkey = cur.fetchone()
+            if node_name == None:
+                cur.execute(
+                    'UPDATE node SET name=? WHERE pkey = ?', ('/'.join(node), node_pkey)
+                )
 
     conn.commit()
 
@@ -2399,10 +2396,7 @@ def main():
 
         print("{}: About to load database".format(datetime.datetime.now()))
         db = prjxray.db.Database(args.db_root, args.part)
-
-        with open(os.path.join(args.db_root, args.part,
-                               'wires_nodes.json')) as f:
-            wires_nodes = json.load(f)
+        node_model = db.node_model(progressbar_utils.progressbar)
 
         grid = db.grid()
         get_switch, get_switch_timing = create_get_switch(conn)
@@ -2413,7 +2407,7 @@ def main():
         print("{}: Initial database formed".format(datetime.datetime.now()))
         import_nodes(db, grid, conn)
         print("{}: Connections made".format(datetime.datetime.now()))
-        name_nodes(conn, wires_nodes)
+        name_nodes(conn, node_model)
         print("{}: Nodes named".format(datetime.datetime.now()))
         count_sites_and_pips_on_nodes(conn)
         print("{}: Counted sites and pips".format(datetime.datetime.now()))
