@@ -211,7 +211,13 @@ def create_design(conn, db, g, roi_def):
             else:
                 p['name'] = port['name'] + '[' + str(i) + ']'
             p['type'] = port['type']
-            p['node'] = part_pins.pop()
+
+            if port['node'] == "UNASSIGNED":
+                p['node'] = part_pins.pop()
+            else:
+                _ = part_pins.pop()
+                p['node'] = port['node']
+
             p['pin'] = j['info']['name'] + '_SYN' + str(num_ports)
             num_ports += 1
             design['ports'].append(p)

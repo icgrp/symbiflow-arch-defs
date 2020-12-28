@@ -185,7 +185,7 @@ SELECT pkey FROM wire WHERE node_pkey = ?
         usable_wires = {k:v for k,v in usable_wires.items() if v == side}
         correct_wire = list(usable_wires.keys())[0]
     else:
-        assert len(usable_wires) == 1
+        assert len(usable_wires) >= 1
         correct_wire = list(usable_wires.keys())[0]
 
     cur.execute(
