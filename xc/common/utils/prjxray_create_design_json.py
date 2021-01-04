@@ -3,7 +3,7 @@ import prjxray.db
 from prjxray.roi import Roi
 import simplejson as json
 from functools import partial
-from prjxray_create_synth_tiles import map_tile_to_vpr_coord, tile_in_roi, wire_in_roi, wire_manhattan_distance, find_wire_from_node
+from prjxray_create_synth_tiles import tile_in_roi, wire_in_roi, wire_manhattan_distance, find_wire_from_node
 
 from prjxray_db_cache import DatabaseCache
 
@@ -58,18 +58,58 @@ ORDER BY graph_node.node_pkey
 get_nodes.nodes = None
 
 
+def map_tile_to_vpr_coord(conn, tile):
+    """ Converts prjxray tile name into VPR tile coordinates.
+
+    It is assumed that this tile should only have one mapped tile.
+
+    """
+    c = conn.cursor()
+    c.execute("SELECT pkey FROM phy_tile WHERE name = ?;", (tile, ))
+    phy_tile_pkey = c.fetchone()[0]
+
+    # Filters NULL tiles to prevent selecting two tiles that point
+    # to the same phy_tile
+    c.execute(
+        """
+SELECT tile_map.tile_pkey FROM tile_map INNER JOIN tile
+ON tile_map.tile_pkey = tile.pkey INNER JOIN tile_type
+ON tile.tile_type_pkey = tile_type.pkey
+WHERE tile_map.phy_tile_pkey = ?
+    """, (phy_tile_pkey, )
+    )
+    mapped_tiles = c.fetchall()
+    tile_pkey = mapped_tiles[0][0]
+
+    c.execute("SELECT grid_x, grid_y FROM tile WHERE pkey = ?", (tile_pkey, ))
+    grid_x, grid_y = c.fetchone()
+
+    return grid_x, grid_y
+
+
 def convert_from_canon_to_vpr_coord(conn, grid_x, grid_y):
     c = conn.cursor()
     c.execute("""
 SELECT name FROM phy_tile 
-WHERE grid_x = ? AND grid_y = ?
-    """, (grid_x, grid_y))
+WHERE grid_x = ?
+    """, (grid_x, ))
 
-    tiles = c.fetchall()
-    if len(tiles[0]) != 1:
+    tiles = c.fetchone()
+    if len(tiles) != 1:
         from IPython import embed; embed()
-    assert len(tiles[0]) == 1
-    x, y = map_tile_to_vpr_coord(conn, tiles[0][0])
+    assert len(tiles) == 1
+    x, _ = map_tile_to_vpr_coord(conn, tiles[0])
+
+    c.execute("""
+SELECT name FROM phy_tile 
+WHERE grid_y = ?
+    """, (grid_y, ))
+
+    tiles = c.fetchone()
+    if len(tiles) != 1:
+        from IPython import embed; embed()
+    assert len(tiles) == 1
+    _, y = map_tile_to_vpr_coord(conn, tiles[0])
     return (x,y)
 
 
