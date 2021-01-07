@@ -130,13 +130,28 @@ def choose_partition_pins(conn, g, roi, num_inputs, num_outputs, num_clks, side,
 
     x1, y1 = convert_from_canon_to_vpr_coord(conn, roi.x1, roi.y1)
     x2, y2 = convert_from_canon_to_vpr_coord(conn, roi.x2, roi.y2)
-    possible_nodes = list(filter(partial(func, roi=(x1,y1,x2,y2)), get_nodes(conn, g, roi)))
 
     def filter_bad_nodes(n):
-        tile, _ = n[6].split('/')
-        return ('IOB' not in tile) and ('BRAM' not in n[6]) and ('DSP' not in n[6]) and ('CLK' not in n[6])
+        tile, node = n[6].split('/')
+        return ('INT_R' in tile or 'INT_L' in tile) and ('LV' not in node) and ('LH' not in node)
 
-    possible_nodes = list(filter(filter_bad_nodes, possible_nodes))
+    possible_nodes = list(filter(filter_bad_nodes, get_nodes(conn, g, roi)))
+    new_possible_nodes = {}
+
+    for _,_,x_low,x_high,y_low,y_high,node in possible_nodes:
+        if node in new_possible_nodes:
+            old_node = new_possible_nodes[node]
+            x_low_new = min(x_low, old_node[0])  
+            x_high_new = max(x_high, old_node[1])  
+            y_low_new = min(y_low, old_node[2])  
+            y_high_new = max(y_high, old_node[3])
+            new_possible_nodes[node] = (x_low_new, x_high_new, y_low_new, y_high_new)
+        else:
+            new_possible_nodes[node] = (x_low, x_high, y_low, y_high)
+    possible_nodes = list()
+    for node,(x_low, x_high, y_low, y_high) in new_possible_nodes.items():
+        possible_nodes.append((0, 0, x_low, x_high, y_low, y_high, node))
+    possible_nodes = list(filter(partial(func, roi=(x1,y1,x2,y2)), possible_nodes))
     inputs, outputs = split_node_list(conn, roi, possible_nodes)
     clock_func = lambda n, roi: ((n[2] < roi.x1 and n[3] > roi.x1) or \
             (n[2] > roi.x1 and n[3] < roi.x1)) \
