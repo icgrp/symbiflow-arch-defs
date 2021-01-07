@@ -13,7 +13,9 @@ def determine_node_type(conn, roi, node_name):
 
     x, y = map_tile_to_vpr_coord(conn, tile)
     
-    if x >= roi.x1 and x <= roi.x2 and y >= roi.y1 and y <= roi.y2:
+    x1,y1 = convert_from_canon_to_vpr_coord(conn, roi.x1, roi.y1)
+    x2,y2 = convert_from_canon_to_vpr_coord(conn, roi.x2, roi.y2)
+    if x >= x1 and x <= x2 and y >= y1 and y <= y2:
         return 'out'
     else:
         return 'in'
@@ -192,6 +194,8 @@ def choose_partition_pins(conn, g, roi, num_inputs, num_outputs, num_clks, side,
         if outputs_remaining == 0:
             break;
         node = o[6]
+        if node == 'INT_L_X56Y46/NW6BEG3':
+            from IPython import embed; embed()
         if node in choose_partition_pins.nodes_used:
             continue
         tile, _ = find_wire_from_node(conn, g, roi, node)
