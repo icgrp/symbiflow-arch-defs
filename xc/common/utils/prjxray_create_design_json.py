@@ -271,7 +271,7 @@ def create_design(conn, db, g, roi_def):
                 p['name'] = port['name'] + '[' + str(i) + ']'
             p['type'] = port['type']
 
-            if port['node'] == "UNASSIGNED":
+            if 'node' not in port or port['node'] == "UNASSIGNED":
                 p['node'] = part_pins.pop()
             else:
                 _ = part_pins.pop()
