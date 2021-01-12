@@ -194,8 +194,6 @@ def choose_partition_pins(conn, g, roi, num_inputs, num_outputs, num_clks, side,
         if outputs_remaining == 0:
             break;
         node = o[6]
-        if node == 'INT_L_X56Y46/NW6BEG3':
-            from IPython import embed; embed()
         if node in choose_partition_pins.nodes_used:
             continue
         tile, _ = find_wire_from_node(conn, g, roi, node)
