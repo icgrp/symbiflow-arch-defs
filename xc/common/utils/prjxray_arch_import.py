@@ -962,6 +962,9 @@ def main():
     parser.add_argument(
         '--pin_assignments', required=True, type=argparse.FileType('r')
     )
+    parser.add_argument(
+        '--tile-xml-dir', required=False, default="../../tiles", help="Tile xml directory for arch"
+    )
     parser.add_argument('--use_roi', required=False)
     parser.add_argument('--use_overlay', required=False)
     parser.add_argument('--device', required=True)
@@ -977,9 +980,9 @@ def main():
     tile_types = args.tile_types.split(',')
     pb_types = args.pb_types.split(',')
 
-    model_xml_spec = "../../tiles/{0}/{0}.model.xml"
-    pbtype_xml_spec = "../../tiles/{0}/{0}.pb_type.xml"
-    tile_xml_spec = "../../tiles/{0}/{0}.tile.xml"
+    model_xml_spec = args.tile_xml_dir+"/{0}/{0}.model.xml"
+    pbtype_xml_spec = args.tile_xml_dir+"/{0}/{0}.pb_type.xml"
+    tile_xml_spec = args.tile_xml_dir+"/{0}/{0}.tile.xml"
 
     xi_url = "http://www.w3.org/2001/XInclude"
     ET.register_namespace('xi', xi_url)

@@ -10,7 +10,7 @@ endfunction()
 
 function(PROJECT_RAY_ARCH)
   set(options)
-  set(oneValueArgs ARCH PART USE_ROI DEVICE GRAPH_LIMIT USE_OVERLAY)
+  set(oneValueArgs ARCH PART USE_ROI DEVICE TILE_XML_DIR GRAPH_LIMIT USE_OVERLAY)
   set(multiValueArgs TILE_TYPES PB_TYPES)
   cmake_parse_arguments(
     PROJECT_RAY_ARCH
@@ -33,6 +33,7 @@ function(PROJECT_RAY_ARCH)
 
   set(PART ${PROJECT_RAY_ARCH_PART})
   set(DEVICE ${PROJECT_RAY_ARCH_DEVICE})
+  set(TILE_XML_DIR ${PROJECT_RAY_ARCH_TILE_XML_DIR})
   set(ARCH_IMPORT ${symbiflow-arch-defs_SOURCE_DIR}/xc/common/utils/prjxray_arch_import.py)
   set(CREATE_SYNTH_TILES ${symbiflow-arch-defs_SOURCE_DIR}/xc/common/utils/prjxray_create_synth_tiles.py)
   set(CREATE_EDGES ${symbiflow-arch-defs_SOURCE_DIR}/xc/common/utils/prjxray_create_edges.py)
@@ -201,6 +202,7 @@ function(PROJECT_RAY_ARCH)
       --part ${PART}
       --connection_database ${CMAKE_CURRENT_BINARY_DIR}/channels.db
       --output-arch ${CMAKE_CURRENT_BINARY_DIR}/arch.xml
+      --tile-xml-dir ${TILE_XML_DIR}
       --tile-types "${TILE_TYPES_COMMA}"
       --pb_types "${PB_TYPES_COMMA}"
       --pin_assignments ${PIN_ASSIGNMENTS}

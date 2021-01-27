@@ -2,64 +2,712 @@
     "info":
         {
         "name": "pr1",
-        "pins_per_tile": 10,
-        "GRID_X_MAX": 73,
-        "GRID_X_MIN": 19,
+        "pins_per_tile": 5,
+        "GRID_X_MAX": 176,
+        "GRID_X_MIN": 129,
         "GRID_Y_MAX": 155,
         "GRID_Y_MIN": 105
         },
     "ports": [
         {
-            "name": "clk_bft",
-            "type": "clk",
+            "name": "ap_start",
+            "type": "in",
             "data_type": "scalar",
-            "side": "west"
+            "side": "west",
+            "node": "INT_R_X51Y47/EE4BEG1"
         },
         {
-            "name": "clk_user",
+            "name": "clk",
             "type": "clk",
             "data_type": "scalar",
-            "side": "west"
+            "side": "west",
+            "node": "UNASSIGNED"
+        },
+        {
+            "name": "din_leaf_bft2interface[0]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y39/EE2BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[10]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y41/ER1BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[11]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y44/ER1BEG1"
+        },
+        {
+            "name": "din_leaf_bft2interface[12]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X49Y44/EE4BEG0"
+        },
+        {
+            "name": "din_leaf_bft2interface[13]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X50Y41/EE4BEG1"
+        },
+        {
+            "name": "din_leaf_bft2interface[14]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X50Y40/EE4BEG0"
+        },
+        {
+            "name": "din_leaf_bft2interface[15]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y39/ER1BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[16]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X49Y42/EE4BEG0"
+        },
+        {
+            "name": "din_leaf_bft2interface[17]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X48Y42/EE4BEG1"
+        },
+        {
+            "name": "din_leaf_bft2interface[18]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X50Y43/SE6BEG0"
+        },
+        {
+            "name": "din_leaf_bft2interface[19]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y42/ER1BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[1]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y42/ER1BEG1"
+        },
+        {
+            "name": "din_leaf_bft2interface[20]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y39/EL1BEG0"
+        },
+        {
+            "name": "din_leaf_bft2interface[21]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X50Y42/SE6BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[22]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y36/NE2BEG3"
+        },
+        {
+            "name": "din_leaf_bft2interface[23]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y38/ER1BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[24]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y40/NE2BEG3"
+        },
+        {
+            "name": "din_leaf_bft2interface[25]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y41/EE2BEG3"
+        },
+        {
+            "name": "din_leaf_bft2interface[26]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X50Y41/EE2BEG0"
+        },
+        {
+            "name": "din_leaf_bft2interface[27]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y40/ER1BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[28]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X48Y42/EE4BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[29]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y44/ER1BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[2]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X50Y40/EE2BEG0"
+        },
+        {
+            "name": "din_leaf_bft2interface[30]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y42/EE4BEG1"
+        },
+        {
+            "name": "din_leaf_bft2interface[31]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y40/ER1BEG1"
+        },
+        {
+            "name": "din_leaf_bft2interface[32]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X48Y39/EE4BEG1"
+        },
+        {
+            "name": "din_leaf_bft2interface[33]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y40/ER1BEG3"
+        },
+        {
+            "name": "din_leaf_bft2interface[34]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X50Y41/EE2BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[35]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y40/EE2BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[36]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y43/SE6BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[37]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y37/ER1BEG1"
+        },
+        {
+            "name": "din_leaf_bft2interface[38]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X49Y40/EE4BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[39]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y41/EE2BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[3]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X49Y43/EE4BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[40]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y42/EE2BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[41]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y43/NE2BEG0"
+        },
+        {
+            "name": "din_leaf_bft2interface[42]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y41/EL1BEG1"
+        },
+        {
+            "name": "din_leaf_bft2interface[43]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y48/SE2BEG3"
+        },
+        {
+            "name": "din_leaf_bft2interface[44]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y41/ER1BEG1"
+        },
+        {
+            "name": "din_leaf_bft2interface[45]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X49Y49/EE4BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[48]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X49Y41/EE4BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[4]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y44/SE6BEG0"
+        },
+        {
+            "name": "din_leaf_bft2interface[5]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y38/ER1BEG1"
+        },
+        {
+            "name": "din_leaf_bft2interface[6]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y42/EL1BEG0"
+        },
+        {
+            "name": "din_leaf_bft2interface[7]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X50Y38/EE2BEG2"
+        },
+        {
+            "name": "din_leaf_bft2interface[8]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y39/ER1BEG3"
+        },
+        {
+            "name": "din_leaf_bft2interface[9]",
+            "type": "in",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X51Y42/SE2BEG1"
+        },
+        {
+            "name": "dout_leaf_interface2bft[0]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y43/WW4BEG0"
+        },
+        {
+            "name": "dout_leaf_interface2bft[10]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y45/SW2BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[11]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y48/SW6BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[12]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X44Y47/LH12"
+        },
+        {
+            "name": "dout_leaf_interface2bft[13]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y47/WW2BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[14]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y47/WW2BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[15]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y45/WW2BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[16]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y42/WW2BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[17]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y47/WW4BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[18]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y43/WW2BEG0"
+        },
+        {
+            "name": "dout_leaf_interface2bft[19]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X54Y49/WW4BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[1]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y43/WW2BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[20]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y48/WL1BEG1"
+        },
+        {
+            "name": "dout_leaf_interface2bft[21]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X54Y47/WW4BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[22]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y44/NW6BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[23]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X55Y46/WW4BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[24]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y46/WW2BEG1"
+        },
+        {
+            "name": "dout_leaf_interface2bft[25]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y49/WW4BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[26]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X54Y48/WW4BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[27]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y47/WW2BEG1"
+        },
+        {
+            "name": "dout_leaf_interface2bft[28]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X54Y45/WW4BEG1"
+        },
+        {
+            "name": "dout_leaf_interface2bft[29]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y48/WW4BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[2]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X54Y45/WW4BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[30]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y46/WL1BEG1"
+        },
+        {
+            "name": "dout_leaf_interface2bft[31]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X55Y47/WW4BEG0"
+        },
+        {
+            "name": "dout_leaf_interface2bft[32]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y47/WW4BEG0"
+        },
+        {
+            "name": "dout_leaf_interface2bft[33]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y43/WW4BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[34]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y44/WW2BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[35]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y45/WW2BEG0"
+        },
+        {
+            "name": "dout_leaf_interface2bft[36]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y44/WW4BEG0"
+        },
+        {
+            "name": "dout_leaf_interface2bft[37]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y43/WW2BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[38]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y43/WW4BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[39]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y44/WW2BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[3]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y44/WW2BEG0"
+        },
+        {
+            "name": "dout_leaf_interface2bft[40]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y44/SW2BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[41]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X54Y43/WW4BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[42]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y46/WW4BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[43]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X55Y49/WW4BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[44]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y46/WW4BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[45]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X54Y43/WW4BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[46]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X41Y42/LH12"
+        },
+        {
+            "name": "dout_leaf_interface2bft[47]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X42Y44/LH12"
+        },
+        {
+            "name": "dout_leaf_interface2bft[48]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X44Y45/LH12"
+        },
+        {
+            "name": "dout_leaf_interface2bft[4]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X53Y44/WW4BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[5]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X44Y44/LH12"
+        },
+        {
+            "name": "dout_leaf_interface2bft[6]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X55Y47/WW4BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[7]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_L_X52Y46/WW2BEG2"
+        },
+        {
+            "name": "dout_leaf_interface2bft[8]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X55Y45/WW4BEG3"
+        },
+        {
+            "name": "dout_leaf_interface2bft[9]",
+            "type": "out",
+            "data_type": "scalar",
+            "side": "west",
+            "node": "INT_R_X55Y44/WW4BEG0"
         },
         {
             "name": "resend",
             "type": "in",
             "data_type": "scalar",
-            "side": "west"
+            "side": "west",
+            "node": "INT_R_X51Y43/EL1BEG1"
         },
         {
             "name": "reset",
             "type": "in",
             "data_type": "scalar",
-            "side": "west"
-        },
-        {
-            "name": "reset_bft",
-            "type": "in",
-            "data_type": "scalar",
-            "side": "west"
-        },
-        {
-            "name": "dout_leaf_interface2bft",
-            "type": "out",
-            "data_type": "bus",
-            "msb": 48,
-            "lsb": 0,
-            "side": "west"
-        },
-        {
-            "name": "din_leaf_bft2interface",
-            "type": "in",
-            "data_type": "bus",
-            "msb": 48,
-            "lsb": 0,
-            "side": "south"
-        },
-        {
-            "name": "ap_start",
-            "type": "in",
-            "data_type": "scalar",
-            "side": "south"
+            "side": "west",
+            "node": "INT_R_X51Y49/ER1BEG1"
         }
     ]
 }

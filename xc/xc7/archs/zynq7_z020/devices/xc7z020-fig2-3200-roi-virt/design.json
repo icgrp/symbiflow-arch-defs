@@ -1,7 +1,7 @@
 {
   "info": {
     "name": "pr1",
-    "pins_per_tile": 10,
+    "pins_per_tile": 5,
     "GRID_X_MAX": 68,
     "GRID_X_MIN": 39,
     "GRID_Y_MAX": 155,
@@ -11,7 +11,7 @@
     {
       "name": "ap_start",
       "type": "in",
-      "node": "INT_R_X27Y26/NW6BEG2",
+      "node": "INT_L_X26Y49/SW6BEG1",
       "pin": "pr1_SYN0"
     },
     {
@@ -23,589 +23,589 @@
     {
       "name": "din_leaf_bft2interface[0]",
       "type": "in",
-      "node": "INT_L_X26Y29/WW4BEG0",
+      "node": "INT_L_X26Y48/WW4BEG0",
       "pin": "pr1_SYN2"
     },
     {
       "name": "din_leaf_bft2interface[10]",
       "type": "in",
-      "node": "INT_L_X26Y31/WW4BEG0",
+      "node": "INT_R_X27Y47/WW4BEG1",
       "pin": "pr1_SYN3"
     },
     {
       "name": "din_leaf_bft2interface[11]",
       "type": "in",
-      "node": "INT_L_X26Y35/WW4BEG0",
+      "node": "INT_L_X26Y48/WL1BEG_N3",
       "pin": "pr1_SYN4"
     },
     {
       "name": "din_leaf_bft2interface[12]",
       "type": "in",
-      "node": "INT_L_X26Y31/NW6BEG0",
+      "node": "INT_L_X26Y46/WW2BEG0",
       "pin": "pr1_SYN5"
     },
     {
       "name": "din_leaf_bft2interface[13]",
       "type": "in",
-      "node": "INT_L_X26Y28/NW2BEG0",
+      "node": "INT_L_X26Y50/SW2BEG0",
       "pin": "pr1_SYN6"
     },
     {
       "name": "din_leaf_bft2interface[14]",
       "type": "in",
-      "node": "INT_L_X26Y27/NW6BEG0",
+      "node": "INT_R_X27Y47/WW4BEG0",
       "pin": "pr1_SYN7"
     },
     {
       "name": "din_leaf_bft2interface[15]",
       "type": "in",
-      "node": "INT_L_X26Y31/NW6BEG1",
+      "node": "INT_L_X26Y46/WW2BEG1",
       "pin": "pr1_SYN8"
     },
     {
       "name": "din_leaf_bft2interface[16]",
       "type": "in",
-      "node": "INT_R_X13Y28/ER1BEG1",
+      "node": "INT_L_X28Y48/WW4BEG0",
       "pin": "pr1_SYN9"
     },
     {
       "name": "din_leaf_bft2interface[17]",
       "type": "in",
-      "node": "INT_L_X26Y26/NW2BEG0",
+      "node": "INT_R_X27Y48/WW2BEG1",
       "pin": "pr1_SYN10"
     },
     {
       "name": "din_leaf_bft2interface[18]",
       "type": "in",
-      "node": "INT_L_X26Y28/WW4BEG1",
+      "node": "INT_L_X26Y48/WW4BEG2",
       "pin": "pr1_SYN11"
     },
     {
       "name": "din_leaf_bft2interface[19]",
       "type": "in",
-      "node": "INT_L_X26Y27/WW2BEG1",
+      "node": "INT_L_X26Y47/WW4BEG1",
       "pin": "pr1_SYN12"
     },
     {
       "name": "din_leaf_bft2interface[1]",
       "type": "in",
-      "node": "INT_R_X27Y28/WW4BEG0",
+      "node": "INT_R_X27Y45/WW2BEG0",
       "pin": "pr1_SYN13"
     },
     {
       "name": "din_leaf_bft2interface[20]",
       "type": "in",
-      "node": "INT_L_X26Y28/WR1BEG1",
+      "node": "INT_L_X26Y49/WW2BEG0",
       "pin": "pr1_SYN14"
     },
     {
       "name": "din_leaf_bft2interface[21]",
       "type": "in",
-      "node": "INT_L_X26Y29/WR1BEG2",
+      "node": "INT_R_X27Y48/WW2BEG0",
       "pin": "pr1_SYN15"
     },
     {
       "name": "din_leaf_bft2interface[22]",
       "type": "in",
-      "node": "INT_L_X26Y33/WW4BEG2",
+      "node": "INT_L_X26Y47/WW4BEG0",
       "pin": "pr1_SYN16"
     },
     {
       "name": "din_leaf_bft2interface[23]",
       "type": "in",
-      "node": "INT_R_X27Y32/WW4BEG0",
+      "node": "INT_R_X19Y50/SW2BEG1",
       "pin": "pr1_SYN17"
     },
     {
       "name": "din_leaf_bft2interface[24]",
       "type": "in",
-      "node": "INT_L_X26Y29/WL1BEG1",
+      "node": "INT_R_X27Y47/WW2BEG0",
       "pin": "pr1_SYN18"
     },
     {
       "name": "din_leaf_bft2interface[25]",
       "type": "in",
-      "node": "INT_L_X26Y33/WR1BEG2",
+      "node": "INT_R_X27Y48/WW4BEG1",
       "pin": "pr1_SYN19"
     },
     {
       "name": "din_leaf_bft2interface[26]",
       "type": "in",
-      "node": "INT_R_X27Y30/WW4BEG0",
+      "node": "INT_L_X22Y50/SS2BEG3",
       "pin": "pr1_SYN20"
     },
     {
       "name": "din_leaf_bft2interface[27]",
       "type": "in",
-      "node": "INT_L_X26Y31/WW4BEG2",
+      "node": "INT_L_X26Y48/WW2BEG1",
       "pin": "pr1_SYN21"
     },
     {
       "name": "din_leaf_bft2interface[28]",
       "type": "in",
-      "node": "INT_R_X27Y25/WW4BEG0",
+      "node": "INT_L_X26Y48/SW2BEG1",
       "pin": "pr1_SYN22"
     },
     {
       "name": "din_leaf_bft2interface[29]",
       "type": "in",
-      "node": "INT_R_X27Y29/WW2BEG0",
+      "node": "INT_R_X21Y50/SW2BEG1",
       "pin": "pr1_SYN23"
     },
     {
       "name": "din_leaf_bft2interface[2]",
       "type": "in",
-      "node": "INT_L_X26Y27/WW4BEG0",
+      "node": "INT_L_X26Y47/SW6BEG1",
       "pin": "pr1_SYN24"
     },
     {
       "name": "din_leaf_bft2interface[30]",
       "type": "in",
-      "node": "INT_R_X27Y30/WW2BEG1",
+      "node": "INT_R_X27Y47/WW2BEG1",
       "pin": "pr1_SYN25"
     },
     {
       "name": "din_leaf_bft2interface[31]",
       "type": "in",
-      "node": "INT_L_X26Y32/WL1BEG2",
+      "node": "INT_R_X21Y50/SW2BEG3",
       "pin": "pr1_SYN26"
     },
     {
       "name": "din_leaf_bft2interface[32]",
       "type": "in",
-      "node": "INT_L_X26Y28/NW6BEG1",
+      "node": "INT_L_X26Y49/WW2BEG1",
       "pin": "pr1_SYN27"
     },
     {
       "name": "din_leaf_bft2interface[33]",
       "type": "in",
-      "node": "INT_L_X26Y30/SW2BEG0",
+      "node": "INT_L_X26Y48/SW6BEG1",
       "pin": "pr1_SYN28"
     },
     {
       "name": "din_leaf_bft2interface[34]",
       "type": "in",
-      "node": "INT_L_X26Y29/WR1BEG_S0",
+      "node": "INT_R_X27Y46/WW4BEG0",
       "pin": "pr1_SYN29"
     },
     {
       "name": "din_leaf_bft2interface[35]",
       "type": "in",
-      "node": "INT_R_X27Y28/WW2BEG1",
+      "node": "INT_L_X26Y44/SW6BEG1",
       "pin": "pr1_SYN30"
     },
     {
       "name": "din_leaf_bft2interface[36]",
       "type": "in",
-      "node": "INT_L_X26Y29/NW6BEG2",
+      "node": "INT_L_X26Y46/WW4BEG2",
       "pin": "pr1_SYN31"
     },
     {
       "name": "din_leaf_bft2interface[37]",
       "type": "in",
-      "node": "INT_L_X26Y30/WW4BEG0",
+      "node": "INT_L_X26Y46/WW2BEG2",
       "pin": "pr1_SYN32"
     },
     {
       "name": "din_leaf_bft2interface[38]",
       "type": "in",
-      "node": "INT_L_X26Y28/NW6BEG2",
+      "node": "INT_L_X26Y44/WW2BEG0",
       "pin": "pr1_SYN33"
     },
     {
       "name": "din_leaf_bft2interface[39]",
       "type": "in",
-      "node": "INT_R_X27Y27/NW6BEG2",
+      "node": "INT_R_X25Y50/SW2BEG1",
       "pin": "pr1_SYN34"
     },
     {
       "name": "din_leaf_bft2interface[3]",
       "type": "in",
-      "node": "INT_L_X26Y29/WW2BEG1",
+      "node": "INT_L_X26Y46/WR1BEG1",
       "pin": "pr1_SYN35"
     },
     {
       "name": "din_leaf_bft2interface[40]",
       "type": "in",
-      "node": "INT_L_X26Y30/WW4BEG2",
+      "node": "INT_R_X27Y49/WW4BEG1",
       "pin": "pr1_SYN36"
     },
     {
       "name": "din_leaf_bft2interface[41]",
       "type": "in",
-      "node": "INT_L_X26Y30/WW4BEG1",
+      "node": "INT_L_X22Y50/SS2BEG1",
       "pin": "pr1_SYN37"
     },
     {
       "name": "din_leaf_bft2interface[42]",
       "type": "in",
-      "node": "INT_L_X26Y33/NW2BEG2",
+      "node": "INT_L_X26Y47/WL1BEG1",
       "pin": "pr1_SYN38"
     },
     {
       "name": "din_leaf_bft2interface[43]",
       "type": "in",
-      "node": "INT_L_X26Y28/NW2BEG3",
+      "node": "INT_L_X26Y45/WW2BEG0",
       "pin": "pr1_SYN39"
     },
     {
       "name": "din_leaf_bft2interface[44]",
       "type": "in",
-      "node": "INT_L_X26Y30/WL1BEG0",
+      "node": "INT_L_X26Y46/SW2BEG2",
       "pin": "pr1_SYN40"
     },
     {
       "name": "din_leaf_bft2interface[45]",
       "type": "in",
-      "node": "INT_L_X26Y31/WR1BEG2",
+      "node": "INT_L_X26Y45/WW2BEG2",
       "pin": "pr1_SYN41"
     },
     {
       "name": "din_leaf_bft2interface[48]",
       "type": "in",
-      "node": "INT_L_X26Y30/NW6BEG3",
+      "node": "INT_L_X26Y48/NW2BEG0",
       "pin": "pr1_SYN42"
     },
     {
       "name": "din_leaf_bft2interface[4]",
       "type": "in",
-      "node": "INT_L_X26Y30/WL1BEG1",
+      "node": "INT_L_X26Y47/WW4BEG2",
       "pin": "pr1_SYN43"
     },
     {
       "name": "din_leaf_bft2interface[5]",
       "type": "in",
-      "node": "INT_L_X26Y27/SW2BEG3",
+      "node": "INT_L_X26Y45/WW4BEG0",
       "pin": "pr1_SYN44"
     },
     {
       "name": "din_leaf_bft2interface[6]",
       "type": "in",
-      "node": "INT_L_X26Y26/WR1BEG2",
+      "node": "INT_R_X27Y46/WW2BEG0",
       "pin": "pr1_SYN45"
     },
     {
       "name": "din_leaf_bft2interface[7]",
       "type": "in",
-      "node": "INT_R_X13Y30/EE4BEG0",
+      "node": "INT_L_X22Y51/SW6BEG2",
       "pin": "pr1_SYN46"
     },
     {
       "name": "din_leaf_bft2interface[8]",
       "type": "in",
-      "node": "INT_L_X26Y28/WW2BEG2",
+      "node": "INT_L_X26Y45/WW2BEG1",
       "pin": "pr1_SYN47"
     },
     {
       "name": "din_leaf_bft2interface[9]",
       "type": "in",
-      "node": "INT_L_X26Y30/WW2BEG2",
+      "node": "INT_R_X27Y46/WW4BEG1",
       "pin": "pr1_SYN48"
     },
     {
       "name": "dout_leaf_interface2bft[0]",
       "type": "out",
-      "node": "INT_R_X25Y20/ER1BEG3",
+      "node": "INT_R_X25Y47/NE2BEG3",
       "pin": "pr1_SYN49"
     },
     {
       "name": "dout_leaf_interface2bft[10]",
       "type": "out",
-      "node": "INT_R_X25Y21/SE2BEG2",
+      "node": "INT_R_X25Y44/SE2BEG3",
       "pin": "pr1_SYN50"
     },
     {
       "name": "dout_leaf_interface2bft[11]",
       "type": "out",
-      "node": "INT_L_X24Y26/EE2BEG3",
+      "node": "INT_R_X25Y49/SE2BEG2",
       "pin": "pr1_SYN51"
     },
     {
       "name": "dout_leaf_interface2bft[12]",
       "type": "out",
-      "node": "INT_R_X25Y22/SE2BEG2",
+      "node": "INT_R_X25Y46/ER1BEG3",
       "pin": "pr1_SYN52"
     },
     {
       "name": "dout_leaf_interface2bft[13]",
       "type": "out",
-      "node": "INT_L_X24Y24/EE2BEG3",
+      "node": "INT_L_X22Y49/NN2BEG3",
       "pin": "pr1_SYN53"
     },
     {
       "name": "dout_leaf_interface2bft[14]",
       "type": "out",
-      "node": "INT_R_X25Y24/SE2BEG2",
+      "node": "INT_L_X22Y47/NN6BEG1",
       "pin": "pr1_SYN54"
     },
     {
       "name": "dout_leaf_interface2bft[15]",
       "type": "out",
-      "node": "INT_R_X25Y25/SE2BEG2",
+      "node": "INT_R_X25Y46/EL1BEG2",
       "pin": "pr1_SYN55"
     },
     {
       "name": "dout_leaf_interface2bft[16]",
       "type": "out",
-      "node": "INT_R_X25Y23/ER1BEG3",
+      "node": "INT_R_X23Y49/EE4BEG2",
       "pin": "pr1_SYN56"
     },
     {
       "name": "dout_leaf_interface2bft[17]",
       "type": "out",
-      "node": "INT_R_X25Y25/SE2BEG3",
+      "node": "INT_R_X25Y47/EE2BEG3",
       "pin": "pr1_SYN57"
     },
     {
       "name": "dout_leaf_interface2bft[18]",
       "type": "out",
-      "node": "INT_R_X25Y20/SE2BEG2",
+      "node": "INT_R_X25Y48/EL1BEG2",
       "pin": "pr1_SYN58"
     },
     {
       "name": "dout_leaf_interface2bft[19]",
       "type": "out",
-      "node": "INT_R_X25Y18/EL1BEG2",
+      "node": "INT_R_X25Y48/EE2BEG1",
       "pin": "pr1_SYN59"
     },
     {
       "name": "dout_leaf_interface2bft[1]",
       "type": "out",
-      "node": "INT_R_X25Y23/EE2BEG2",
+      "node": "INT_R_X25Y47/SE2BEG2",
       "pin": "pr1_SYN60"
     },
     {
       "name": "dout_leaf_interface2bft[20]",
       "type": "out",
-      "node": "INT_R_X25Y23/EL1BEG1",
+      "node": "INT_L_X22Y47/NN6BEG3",
       "pin": "pr1_SYN61"
     },
     {
       "name": "dout_leaf_interface2bft[21]",
       "type": "out",
-      "node": "INT_R_X25Y24/EL1BEG1",
+      "node": "INT_R_X25Y45/NE6BEG3",
       "pin": "pr1_SYN62"
     },
     {
       "name": "dout_leaf_interface2bft[22]",
       "type": "out",
-      "node": "INT_R_X25Y27/SE2BEG0",
+      "node": "INT_L_X24Y49/NE6BEG1",
       "pin": "pr1_SYN63"
     },
     {
       "name": "dout_leaf_interface2bft[23]",
       "type": "out",
-      "node": "INT_L_X24Y29/SE6BEG3",
+      "node": "INT_L_X24Y45/NN6BEG3",
       "pin": "pr1_SYN64"
     },
     {
       "name": "dout_leaf_interface2bft[24]",
       "type": "out",
-      "node": "INT_R_X25Y23/ER1BEG_S0",
+      "node": "INT_R_X25Y41/NE2BEG3",
       "pin": "pr1_SYN65"
     },
     {
       "name": "dout_leaf_interface2bft[25]",
       "type": "out",
-      "node": "INT_L_X24Y25/EE2BEG3",
+      "node": "INT_L_X24Y45/NE6BEG2",
       "pin": "pr1_SYN66"
     },
     {
       "name": "dout_leaf_interface2bft[26]",
       "type": "out",
-      "node": "INT_R_X25Y26/EE2BEG3",
+      "node": "INT_L_X22Y48/NE6BEG3",
       "pin": "pr1_SYN67"
     },
     {
       "name": "dout_leaf_interface2bft[27]",
       "type": "out",
-      "node": "INT_R_X25Y26/SE2BEG3",
+      "node": "INT_R_X25Y47/NE2BEG2",
       "pin": "pr1_SYN68"
     },
     {
       "name": "dout_leaf_interface2bft[28]",
       "type": "out",
-      "node": "INT_R_X25Y24/EE2BEG2",
+      "node": "INT_L_X24Y49/EE2BEG2",
       "pin": "pr1_SYN69"
     },
     {
       "name": "dout_leaf_interface2bft[29]",
       "type": "out",
-      "node": "INT_R_X25Y27/EE2BEG2",
+      "node": "INT_R_X25Y49/NE2BEG2",
       "pin": "pr1_SYN70"
     },
     {
       "name": "dout_leaf_interface2bft[2]",
       "type": "out",
-      "node": "INT_R_X25Y21/EE2BEG3",
+      "node": "INT_L_X22Y48/EE4BEG2",
       "pin": "pr1_SYN71"
     },
     {
       "name": "dout_leaf_interface2bft[30]",
       "type": "out",
-      "node": "INT_R_X25Y27/EE2BEG3",
+      "node": "INT_R_X25Y47/EE2BEG1",
       "pin": "pr1_SYN72"
     },
     {
       "name": "dout_leaf_interface2bft[31]",
       "type": "out",
-      "node": "INT_R_X25Y28/SE2BEG2",
+      "node": "INT_R_X19Y47/NE6BEG2",
       "pin": "pr1_SYN73"
     },
     {
       "name": "dout_leaf_interface2bft[32]",
       "type": "out",
-      "node": "INT_R_X25Y29/SE2BEG3",
+      "node": "INT_L_X20Y49/NN2BEG3",
       "pin": "pr1_SYN74"
     },
     {
       "name": "dout_leaf_interface2bft[33]",
       "type": "out",
-      "node": "INT_R_X25Y25/EL1BEG1",
+      "node": "INT_R_X25Y44/NE6BEG0",
       "pin": "pr1_SYN75"
     },
     {
       "name": "dout_leaf_interface2bft[34]",
       "type": "out",
-      "node": "INT_R_X25Y26/SE2BEG2",
+      "node": "INT_L_X22Y46/EE4BEG1",
       "pin": "pr1_SYN76"
     },
     {
       "name": "dout_leaf_interface2bft[35]",
       "type": "out",
-      "node": "INT_L_X22Y27/EE4BEG1",
+      "node": "INT_R_X25Y49/NE2BEG3",
       "pin": "pr1_SYN77"
     },
     {
       "name": "dout_leaf_interface2bft[36]",
       "type": "out",
-      "node": "INT_R_X25Y29/EE2BEG3",
+      "node": "INT_L_X22Y46/NN6BEG2",
       "pin": "pr1_SYN78"
     },
     {
       "name": "dout_leaf_interface2bft[37]",
       "type": "out",
-      "node": "INT_R_X25Y26/ER1BEG3",
+      "node": "INT_R_X23Y45/EE4BEG3",
       "pin": "pr1_SYN79"
     },
     {
       "name": "dout_leaf_interface2bft[38]",
       "type": "out",
-      "node": "INT_R_X25Y29/SE2BEG2",
+      "node": "INT_R_X25Y41/NE2BEG2",
       "pin": "pr1_SYN80"
     },
     {
       "name": "dout_leaf_interface2bft[39]",
       "type": "out",
-      "node": "INT_R_X25Y29/EE2BEG2",
+      "node": "INT_R_X25Y43/NE2BEG2",
       "pin": "pr1_SYN81"
     },
     {
       "name": "dout_leaf_interface2bft[3]",
       "type": "out",
-      "node": "INT_R_X25Y25/EL1BEG2",
+      "node": "INT_L_X24Y44/EE2BEG2",
       "pin": "pr1_SYN82"
     },
     {
       "name": "dout_leaf_interface2bft[40]",
       "type": "out",
-      "node": "INT_R_X25Y30/EE2BEG1",
+      "node": "INT_L_X20Y48/NN2BEG3",
       "pin": "pr1_SYN83"
     },
     {
       "name": "dout_leaf_interface2bft[41]",
       "type": "out",
-      "node": "INT_R_X25Y30/ER1BEG3",
+      "node": "INT_L_X22Y47/NE6BEG3",
       "pin": "pr1_SYN84"
     },
     {
       "name": "dout_leaf_interface2bft[42]",
       "type": "out",
-      "node": "INT_R_X25Y31/SE2BEG3",
+      "node": "INT_L_X18Y49/NN2BEG3",
       "pin": "pr1_SYN85"
     },
     {
       "name": "dout_leaf_interface2bft[43]",
       "type": "out",
-      "node": "INT_L_X24Y28/SE6BEG2",
+      "node": "INT_L_X20Y47/NE6BEG1",
       "pin": "pr1_SYN86"
     },
     {
       "name": "dout_leaf_interface2bft[44]",
       "type": "out",
-      "node": "INT_R_X25Y28/EE2BEG2",
+      "node": "INT_R_X23Y47/NE6BEG3",
       "pin": "pr1_SYN87"
     },
     {
       "name": "dout_leaf_interface2bft[45]",
       "type": "out",
-      "node": "INT_R_X15Y26/WW2BEG2",
+      "node": "INT_L_X24Y42/EE2BEG1",
       "pin": "pr1_SYN88"
     },
     {
       "name": "dout_leaf_interface2bft[46]",
       "type": "out",
-      "node": "INT_R_X25Y23/EL1BEG2",
+      "node": "INT_R_X25Y48/EE2BEG3",
       "pin": "pr1_SYN89"
     },
     {
       "name": "dout_leaf_interface2bft[47]",
       "type": "out",
-      "node": "INT_L_X24Y28/EE2BEG0",
+      "node": "INT_R_X25Y41/NE6BEG3",
       "pin": "pr1_SYN90"
     },
     {
       "name": "dout_leaf_interface2bft[48]",
       "type": "out",
-      "node": "INT_L_X24Y30/EE2BEG3",
+      "node": "INT_R_X25Y49/NE2BEG1",
       "pin": "pr1_SYN91"
     },
     {
       "name": "dout_leaf_interface2bft[4]",
       "type": "out",
-      "node": "INT_L_X24Y25/EE2BEG2",
+      "node": "INT_R_X25Y42/NE2BEG3",
       "pin": "pr1_SYN92"
     },
     {
       "name": "dout_leaf_interface2bft[5]",
       "type": "out",
-      "node": "INT_R_X25Y21/ER1BEG3",
+      "node": "INT_R_X25Y43/ER1BEG3",
       "pin": "pr1_SYN93"
     },
     {
       "name": "dout_leaf_interface2bft[6]",
       "type": "out",
-      "node": "INT_R_X25Y21/EL1BEG1",
+      "node": "INT_R_X25Y44/EE2BEG2",
       "pin": "pr1_SYN94"
     },
     {
       "name": "dout_leaf_interface2bft[7]",
       "type": "out",
-      "node": "INT_R_X25Y19/SE2BEG2",
+      "node": "INT_R_X25Y42/NE6BEG2",
       "pin": "pr1_SYN95"
     },
     {
       "name": "dout_leaf_interface2bft[8]",
       "type": "out",
-      "node": "INT_R_X25Y26/EL1BEG1",
+      "node": "INT_L_X24Y43/EE2BEG2",
       "pin": "pr1_SYN96"
     },
     {
       "name": "dout_leaf_interface2bft[9]",
       "type": "out",
-      "node": "INT_L_X24Y26/EE2BEG0",
+      "node": "INT_L_X22Y45/EE4BEG2",
       "pin": "pr1_SYN97"
     },
     {
       "name": "resend",
       "type": "in",
-      "node": "INT_L_X26Y31/NW2BEG2",
+      "node": "INT_L_X26Y49/WW4BEG2",
       "pin": "pr1_SYN98"
     },
     {
       "name": "reset",
       "type": "in",
-      "node": "INT_L_X28Y27/WW4BEG2",
+      "node": "INT_L_X26Y47/NW2BEG2",
       "pin": "pr1_SYN99"
     }
   ]
