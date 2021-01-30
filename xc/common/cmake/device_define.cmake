@@ -218,6 +218,59 @@ function(ADD_XC_BOARD)
     )
 endfunction()
 
+function(ADD_XC_DEVICE_DESIGN_JSON)
+  set(options)
+  set(oneValueArgs ARCH PART DEVICE DEF_DIR TILE_XML_DIR GRAPH_LIMIT OVERLAY_DIR)
+  set(multiValueArgs TILE_TYPES PB_TYPES)
+  cmake_parse_arguments(
+    ADD_XC_DEVICE_DESIGN_JSON
+    "${options}"
+    "${oneValueArgs}"
+    "${multiValueArgs}"
+    ${ARGN}
+    )
+
+  set(ARCH ${ADD_XC_DEVICE_DESIGN_JSON_ARCH})
+  set(DEVICE ${ADD_XC_DEVICE_DESIGN_JSON_DEVICE})
+  set(DEF_DIR ${ADD_XC_DEVICE_DESIGN_JSON_DEF_DIR})
+  get_target_property_required(FAMILY ${ARCH} FAMILY)
+  get_target_property_required(DOC_PRJ ${ARCH} DOC_PRJ)
+  get_target_property_required(DOC_PRJ_DB ${ARCH} DOC_PRJ_DB)
+  get_target_property_required(PYTHON3 env PYTHON3)
+
+  set(PRJRAY_DIR ${DOC_PRJ})
+  set(PRJRAY_DB_DIR ${DOC_PRJ_DB})
+  set(CREATE_DESIGN_JSON ${symbiflow-arch-defs_SOURCE_DIR}/xc/common/utils/prjxray_create_design_json.py)
+  set(GENERIC_CHANNELS
+    ${symbiflow-arch-defs_SOURCE_DIR}/xc/${FAMILY}/archs/${ARCH}/channels/${PART}/channels.db)
+  get_file_location(GENERIC_CHANNELS_LOCATION ${GENERIC_CHANNELS})
+  get_target_property_required(PRJRAY_ARCH ${ARCH} PRJRAY_ARCH)
+
+  if(NOT "${DEF_DIR}" STREQUAL "")
+    set(SYNTH_DEPS "")
+    append_file_dependency(SYNTH_DEPS ${GENERIC_CHANNELS})
+    list(APPEND SYNTH_DEPS ${DEF_DIR}/definition.json)
+    set(PROJECT_RAY_ARCH_USE_ROI ${CMAKE_CURRENT_BINARY_DIR}/design.json)
+    
+    add_custom_command(
+      OUTPUT design.json top.pcf
+      COMMAND ${CMAKE_COMMAND} -E env PYTHONPATH=${PRJRAY_DIR}:${symbiflow-arch-defs_SOURCE_DIR}/utils
+      ${PYTHON3} ${CREATE_DESIGN_JSON}
+        --db_root ${PRJRAY_DB_DIR}/${PRJRAY_ARCH}/
+        --part ${PART}
+        --connection_database ${GENERIC_CHANNELS_LOCATION}
+		    --roi_def ${DEF_DIR}/definition.json
+		    --design ${PROJECT_RAY_ARCH_USE_ROI}
+		    --pcf ${CMAKE_CURRENT_BINARY_DIR}/top.pcf
+      DEPENDS
+        ${CREATE_DESIGN_JSON} ${SYNTH_DEPS}
+        ${PYTHON3}
+        )
+    add_file_target(FILE design.json GENERATED)
+    add_file_target(FILE top.pcf GENERATED)
+  endif()
+endfunction()
+
 function(ADD_XC_DEVICE_DEFINE_TYPE)
   set(options)
   set(oneValueArgs ARCH PART DEVICE ROI_DIR TILE_XML_DIR GRAPH_LIMIT OVERLAY_DIR)

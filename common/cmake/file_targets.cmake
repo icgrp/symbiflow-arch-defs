@@ -51,6 +51,13 @@ function(GET_REL_TARGET var prefix src_file)
       )
   string(
     REPLACE
+      "${CMAKE_SOURCE_DIR}"
+      ""
+      REL_CANON_LOCATION
+      ${REL_CANON_LOCATION}
+      )
+  string(
+    REPLACE
       "/"
       "_"
       TARGET_PATH
