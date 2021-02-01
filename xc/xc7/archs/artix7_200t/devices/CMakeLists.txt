@@ -3,4 +3,3 @@ add_xc_device_define(
   PART xc7a200tffg1156-1
   DEVICES xc7a200t xc7a200t-mid
 )
-
