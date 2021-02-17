@@ -148,7 +148,7 @@ function(GET_VERILOG_INCLUDES var file)
   execute_process(
     COMMAND
       ${PYTHON_EXECUTABLE} ${symbiflow-arch-defs_SOURCE_DIR}/utils/deps_verilog.py
-      --file_per_line ${CMAKE_CURRENT_SOURCE_DIR}/${file}
+      --file_per_line ${file}
     WORKING_DIRECTORY ${symbiflow-arch-defs_SOURCE_DIR}
     OUTPUT_VARIABLE INCLUDES
   )
@@ -255,7 +255,11 @@ function(ADD_FILE_TARGET)
     if("${ADD_FILE_TARGET_SCANNER_TYPE}" STREQUAL "")
 
     elseif("${ADD_FILE_TARGET_SCANNER_TYPE}" STREQUAL "verilog")
-      get_verilog_includes(INCLUDE_FILES ${ADD_FILE_TARGET_FILE})
+      if(${ADD_FILE_TARGET_ABSOLUTE})
+        get_verilog_includes(INCLUDE_FILES ${ADD_FILE_TARGET_FILE})
+      else()
+        get_verilog_includes(INCLUDE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/${ADD_FILE_TARGET_FILE})
+      endif()
     elseif("${ADD_FILE_TARGET_SCANNER_TYPE}" STREQUAL "xml")
       get_xml_includes(INCLUDE_FILES ${ADD_FILE_TARGET_FILE})
     else()
