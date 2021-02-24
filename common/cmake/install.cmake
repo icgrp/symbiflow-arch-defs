@@ -315,7 +315,7 @@ function(INSTALL_DEVICE_FILES)
   set(PACKAGE ${INSTALL_DEVICE_FILES_PACKAGE})
 
   get_target_property(USE_ROI ${DEVICE_TYPE} USE_ROI)
-  if(USE_ROI OR USE_ROI STREQUAL "USE_ROI-NOTFOUND")
+  if(NOT USE_ROI OR USE_ROI STREQUAL "USE_ROI-NOTFOUND")
     message(STATUS "Skipping device files installation for ${DEVICE}-${PACKAGE} type: ${DEVICE_TYPE}")
     return()
   endif()
