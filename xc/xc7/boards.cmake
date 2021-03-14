@@ -120,14 +120,6 @@ add_xc_board(
 
 # TODO: fix openocd file
 add_xc_board(
-  BOARD zybo-fig1
-  DEVICE xc7z010-fig1
-  PACKAGE test
-  PART xc7z010clg400-1
-  PROG_CMD "${OPENOCD} -f ${PRJXRAY_DIR}/utils/openocd/board-digilent-pynqz1.cfg -c \\\"init $<SEMICOLON> pld load 0 \${OUT_BIN} $<SEMICOLON> exit\\\""
-)
-
-add_xc_board(
   BOARD nexys_video
   DEVICE xc7a200t
   PACKAGE test
