@@ -10,4 +10,3 @@ add_xc_device_define(
   PART xc7z010clg400-1
   DEVICES xc7z010
 )
-

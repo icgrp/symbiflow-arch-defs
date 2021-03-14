@@ -118,7 +118,6 @@ add_xc_board(
   PART xc7z010clg400-1
 )
 
-# TODO: fix openocd file
 add_xc_board(
   BOARD nexys_video
   DEVICE xc7a200t
