@@ -207,7 +207,7 @@ def choose_partition_pins(conn, g, roi, num_inputs, num_outputs, num_clks, side,
             choose_partition_pins.nodes_used[node] = True
     
     if len(ports) != num_inputs+num_outputs+num_clks:
-        from IPython import embed; embed()
+        import pdb; pdb.set_trace()
 
     return ports
 choose_partition_pins.tiles_used = {}
@@ -217,14 +217,24 @@ choose_partition_pins.nodes_used = {}
 def create_design(conn, db, g, roi_def):
     with open(roi_def) as f:
         j = json.load(f)
-
-    roi = Roi(
-        db=db,
-        x1=j['info']['GRID_X_MIN'],
-        y1=j['info']['GRID_Y_MIN'],
-        x2=j['info']['GRID_X_MAX'],
-        y2=j['info']['GRID_Y_MAX']
-    )
+    
+    if 'synth_tiles_range' in j['info']:
+        print("Using synth_tiles_range...")
+        roi = Roi(
+            db=db,
+            x1=j['info']['synth_tiles_range']['GRID_X_MIN'],
+            y1=j['info']['synth_tiles_range']['GRID_Y_MIN'],
+            x2=j['info']['synth_tiles_range']['GRID_X_MAX'],
+            y2=j['info']['synth_tiles_range']['GRID_Y_MAX']
+        )
+    else:
+        roi = Roi(
+            db=db,
+            x1=j['info']['GRID_X_MIN'],
+            y1=j['info']['GRID_Y_MIN'],
+            x2=j['info']['GRID_X_MAX'],
+            y2=j['info']['GRID_Y_MAX']
+        )
 
     pins_per_tile = j['info']['pins_per_tile']
 
@@ -258,7 +268,7 @@ def create_design(conn, db, g, roi_def):
 
         part_pins = choose_partition_pins(conn, g, roi, num_inputs, num_outputs, num_clocks, port['side'], pins_per_tile)
         if len(part_pins) != num_io:
-            from IPython import embed; embed()
+            import pdb; pdb.set_trace()
         assert len(part_pins) == num_io
 
         for i in range(0, num_io):
